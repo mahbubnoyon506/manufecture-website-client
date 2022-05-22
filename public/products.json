@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "LaserRip™ Ripper Points",
+        "price": "30",
+        "description": "When soil compaction is a problem, you need ripper points that stand up to tough, rocky conditions. LaserRip Ripper Points lift and open the soil for improved root penetration and water percolation.",
+        "img": "https://i.ibb.co/JQXmvYt/laser-rip.webp",
+        "minimum": "50",
+        "available": "550"
+    },
+    {
+        "id": 2,
+        "name": "LED Light Beacon",
+        "price": "25",
+        "description": " Eliminates bulb replacement and folds to protect from damage due to height limitations. ",
+        "img": "https://i.ibb.co/St8X4w4/led-light-beacon.webp",
+        "minimum": "50",
+        "available": "500"
+    },
+    {
+        "id": 3,
+        "name": "Load-N-Go",
+        "price": "40",
+        "description": "Moving your mower deck is easy with Load-N-Go, an attachment designed for many models of 1 thru 3 Series tractors with 54”, 60” and 72” AutoConnect™ drive-over mower decks. Install the Load-N-Go in place of existing ramps and you're ready to go.",
+        "img": "https://i.ibb.co/3y0NB43/Load-N-Go.webp",
+        "minimum": "50",
+        "available": "650"
+    },
+    {
+        "id": 4,
+        "name": "FREE Quick-Change Adapters With Perma-Loc™",
+        "price": "40",
+        "description": "Lock sweeps in place with Quick-Change Adapters from John Deere. Featuring heavy-duty cast adapter and stainless steel locking spring, you can install sweeps rapidly and easily with no tools required. And right now adapters/springs are FREE1 with the purchase of Perma-Loc™ High Productivity sweeps (designed to uphold curved wing shape and width at higher speeds) or Tru-Width™ sweeps (designed to retain full cutting width and point for excellent chemical incorporation and seedbed leveling).",
+        "img": "https://i.ibb.co/N3D71Ns/perma-loc.webp",
+        "minimum": "50",
+        "available": "650"
+    },
+    {
+        "id": 5,
+        "name": "MegaTough™ Pickup Teeth",
+        "price": "30",
+        "description": "Handle high-impact loads with John Deere MegaTough Teeth their exclusive square design improves crop retrieval in tough baling conditions. Combine them with MegaWide™ pickup, and you'll gain ground speed with less chance of plugging.",
+        "img": "https://i.ibb.co/qm45zBT/pickup-teeth.webp",
+        "minimum": "50",
+        "available": "550"
+    },
+    {
+        "id": 6,
+        "name": "PLUS Sweeps",
+        "price": "35",
+        "description": "Swap out your sweeps less often and cover far more acres with newly improved PLUS Sweeps. Manufactured with a uniquely formulated tungsten-carbide blend that's applied to the nose, wing and neck, PLUS Sweeps provide extraordinary wear resistance (lasting two to three times longer than uncoated sweeps2). Now available on both Perma-Loc™ High-Productivity and Tru-Width™ sweeps, you'll be able to cultivate consistent seedbeds acre after acre.",
+        "img": "https://i.ibb.co/893gy3Z/plus-sweeps.webp",
+        "minimum": "50",
+        "available": "570"
+    },
+    {
+        "id": 7,
+        "name": "Quik-Knect™",
+        "price": "50",
+        "description": "Easily connect rear PTO driven implements like tillers, rotary cutters and others in a matter of seconds with Quik-Knect. No need to align splines. No muscling or forcing into position. It's that simple.",
+        "img": "https://i.ibb.co/TBWvWJ3/Quik-Knect.webp",
+        "minimum": "50",
+        "available": "570"
+    },
+    {
+        "id": 8,
+        "name": "Dual Shock Seat Suspension",
+        "price": "40",
+        "description": " Reduce shock and vibration and increase operator satisfaction with this heavy-duty seat.",
+        "img": "https://i.ibb.co/NVXdCWV/seat-suspension.webp",
+        "minimum": "50",
+        "available": "500"
+    },
+    {
+        "id": 9,
+        "name": "Small Square Baler Parts",
+        "price": "40",
+        "description": "Replace worn parts now to help prevent downtime later with this special offer for your small square baler. Simply PICK 3 or more categories below. PURCHASE at least one part from each category. GET 15% OFF on all parts in your selected categories.",
+        "img": "https://i.ibb.co/HFGF16S/square-baler.webp",
+        "minimum": "50",
+        "available": "500"
+    },
+    {
+        "id": 10,
+        "name": "Straw Chopper Knives",
+        "price": "40",
+        "description": "Fine-cut, wide-spread straw chopper knives for 70 Series STS and S-Series combines are equipped with an exclusive wing-blade design that moves more air to evenly spread material across the entire width of the cutting platform.",
+        "img": "https://i.ibb.co/5BkYrKG/strawknife.webp",
+        "minimum": "50",
+        "available": "500"
+    },
+    {
+        "id": 11,
+        "name": "Tech Accessories",
+        "price": "50",
+        "description": " Customize your cab with form and function. Keep your devices protected and within reach.",
+        "img": "https://i.ibb.co/1Mg8CRL/tech-accessories.webp",
+        "minimum": "50",
+        "available": "400"
+    },
+    {
+        "id": 12,
+        "name": "Round Baler Wear Parts Box",
+        "price": "60",
+        "description": "With 22 of the most common wear parts on the John Deere 8, 9, and Zero Series 6-ft. diameter round balers, you'll be covered when those minor maintenance needs arise. Ask your dealer about customizing the box for your personal needs and for older model or 5-ft diameter balers. The Round Baler Wear Parts Box (Part # BE32698) easily stores in the back of your truck or shop.",
+        "img": "https://i.ibb.co/4gt7ZvT/baler-wear.webp",
+        "minimum": "40",
+        "available": "450"
+    },
+    {
+        "id": 13,
+        "name": "TractorPlus™ Smart Connector",
+        "price": "35",
+        "description": "Further enhance your TractorPlus App experience with a TractorPlus Smart Connector. This telematics device wirelessly connects the tractor’s control area network (CAN) via Bluetooth® technology to a user’s mobile device and the TractorPlus App (requires iOS version 2.1 and Android version 2.1.1). Not only is the TractorPlus Smart Connector easy to install.",
+        "img": "https://i.ibb.co/k9qLPb2/connector.webp",
+        "minimum": "50",
+        "available": "450"
+    },
+    {
+        "id": 14,
+        "name": "Feederhouse Chain",
+        "price": "35",
+        "description": "John Deere's OEM feederhouse chain offers premium lubrication for longer life, higher grade steel in chain components, solid chain bushings compared to split, and a strong side bar made from alloy steel.",
+        "img": "https://i.ibb.co/yR8gxYj/feeder-chain.webp",
+        "minimum": "50",
+        "available": "450"
+    },
+    {
+        "id": 15,
+        "name": "A&I Products Slatless Feederhouse Chain",
+        "price": "35",
+        "description": "An economical, easy-to-install repair solution for unworn or unbroken slats, the A&I Products slatless feederhouse chain has a separate bolt kit available for installation.",
+        "img": "https://i.ibb.co/9mPVnct/feederslatless-chain.webp",
+        "minimum": "50",
+        "available": "450"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Agriculture",
+        "img": "https://i.ibb.co/8xtK1xZ/agriculture-PSO.webp"
+    },
+    {
+        "id": 2,
+        "name": "lawn & Garden",
+        "img": "https://i.ibb.co/Js4WRkQ/lawn-and-garden-PSO.webp"
+    },
+    {
+        "id": 3,
+        "name": "Construction",
+        "img": "https://i.ibb.co/0tzBHbm/construction-PSO.webp"
+    },
+    {
+        "id": 4,
+        "name": "Landscaping & Grounds Care",
+        "img": "https://i.ibb.co/vjRhXS1/landscaping-and-grounds-care-PSO.webp"
+    },
+    {
+        "id": 5,
+        "name": "Golf & Sports Turf",
+        "img": "https://i.ibb.co/DfCpG9B/golf-and-sports-turf-PSO.webp"
+    },
+    {
+        "id": 6,
+        "name": "Forestry",
+        "img": "https://i.ibb.co/LkGhzXD/forestry-PSO.webp"
+    },
+    {
+        "id": 7,
+        "name": "Engines & Drivetrain",
+        "img": "https://i.ibb.co/wQdnQdP/engines-and-drivetrain-PSO.webp"
+    },
+    {
+        "id": 8,
+        "name": "Government & Military Sales",
+        "img": "https://i.ibb.co/K2sNYDV/military-excavator.webp"
+    },
+    {
+        "id": 9,
+        "name": "Rental Sales",
+        "img": "https://i.ibb.co/bQZjJ4Y/rental-sales-PSO.webp"
+    }
+]
