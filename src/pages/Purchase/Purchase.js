@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import useServiceId from '../hooks/useServiceId';
+import useServiceId from '../../hooks/useServiceId';
 
 const Purchase = () => {
     const { id } = useParams();

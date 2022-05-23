@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader';
-// import useToken from '../../Hooks/UseToken';
+import useToken from '../../hooks/UseToken';
 
 const Signup = () => {
     const navigate = useNavigate()
@@ -25,7 +25,7 @@ const Signup = () => {
         await updateProfile({displayName: data.name})
     };
 
-    // const [token] = useToken(user || googleUser)
+    const [token] = useToken(user || googleUser)
 
     let showErrorMessage;
     if (error || googleError || updateError) {
@@ -38,7 +38,7 @@ const Signup = () => {
     }
     let from = location.state?.from?.pathname || "/";
 
-    if (user || googleUser) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -114,12 +114,12 @@ const Signup = () => {
                             {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span> }
                             </label>
                             {showErrorMessage}
-                            <input className='btn btn-sm w-full bg-secondary text-white border-0' type="submit" value="Sign Up" />
+                            <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Sign Up" />
                         </form>
                     </div>
-                    <p>Already have account? <Link to='/login'><span className='text-secondary'>Login</span></Link></p>
+                    <p>Already have account? <Link to='/login'><span className='text-primary'>Login</span></Link></p>
                     <div class="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className='btn btn-sm btn-outline hover:bg-secondary'> <img className='w-4 mr-2' src="https://i.ibb.co/9tw7sWw/google.png" alt="" /> Continue With Google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-sm btn-outline hover:bg-primary'> <img className='w-4 mr-2' src="https://i.ibb.co/9tw7sWw/google.png" alt="" /> Continue With Google</button>
                 </div>
             </div>
         </div>

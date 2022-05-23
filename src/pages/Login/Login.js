@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/UseToken'
 import Loader from '../../components/Loader';
 import auth from '../../firebase.init';
 
@@ -21,7 +22,7 @@ const Login = () => {
     const onSubmit = async (data) => {
         signInWithEmailAndPassword(data.email, data.password)
     };
-    // const [token] = useToken(user || googleUser)
+    const [token] = useToken(user || googleUser)
     let showErrorMessage;
     let from = location.state?.from?.pathname || "/";
     if (error || googleError) {
@@ -31,8 +32,9 @@ const Login = () => {
         return <Loader></Loader>;
     }
     
-    if (user || googleUser) {
+    if (token) {
         navigate(from, { replace: true });
+        // navigate('/')
     }
     return (
         <div className='flex justify-center items-center h-screen'>
@@ -88,13 +90,13 @@ const Login = () => {
                                 {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                             {showErrorMessage}
-                            <input className='btn btn-sm w-full bg-secondary text-white border-0' type="submit" value="Login" />
+                            <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Login" />
                         </form>
                     </div>
-                    <p>Forget password? <Link to='/resetpass'><span className='text-secondary'>Reset Password</span></Link></p>
-                    <p>Don't have an account? <Link to='/signup'><span className='text-secondary'>Create an account</span></Link></p>
+                    <p>Forget password? <Link to='/resetpass'><span className='text-primary'>Reset Password</span></Link></p>
+                    <p>Don't have an account? <Link to='/signup'><span className='text-primary'>Create an account</span></Link></p>
                     <div class="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className='btn btn-sm btn-outline hover:bg-secondary'> <img className='w-4 mr-2' src="https://i.ibb.co/9tw7sWw/google.png" alt="" /> Continue With Google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-sm btn-outline hover:bg-primary'> <img className='w-4 mr-2' src="https://i.ibb.co/9tw7sWw/google.png" alt="" /> Continue With Google</button>
                 </div>
             </div>
         </div>

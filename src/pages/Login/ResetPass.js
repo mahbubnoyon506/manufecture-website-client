@@ -3,7 +3,7 @@ import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import Loader from '../../components/Loader'
 import auth from '../../firebase.init';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const ResetPass = () => {
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
@@ -13,7 +13,7 @@ const ResetPass = () => {
     const onSubmit = async (data) => {
         await sendPasswordResetEmail(data.email);
         reset()
-        // toast.success('Password reset link send on this email.')
+        toast.success('Password reset link send on this email.')
     };
     let showErrorMessage;
     if (resetError) {
