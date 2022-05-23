@@ -34,7 +34,7 @@ const makeAdmin = () =>{
                    <button onClick={makeAdmin} class="btn btn-outline btn-xs hover:bg-primary">Make Admin</button>
                 }
             </td>
-            <td><button class="btn btn-outline btn-xs hover:bg-primary">Remove User</button></td>
+            {/* <td><button class="btn btn-outline btn-xs hover:bg-primary">Remove User</button></td> */}
         </tr>
     );
 };

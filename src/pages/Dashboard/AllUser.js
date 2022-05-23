@@ -25,7 +25,7 @@ const AllUser = () => {
                         <th>Users</th>
                         <th>Email</th>
                         <th>Status</th>
-                        <th>Modify</th>
+                        {/* <th>Modify</th> */}
                     </tr>
                 </thead>
                 <tbody>

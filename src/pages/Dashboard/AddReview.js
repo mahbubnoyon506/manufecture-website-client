@@ -14,7 +14,6 @@ const AddReview = () => {
            review: data.review,
            point: data.point
         }
-        console.log(review)
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
@@ -28,10 +27,9 @@ const AddReview = () => {
                toast.success('Wow!, Your review successfully posted, Thanks.');
                reset()
             }else{
-                toast.error('Opps! Something try again.');
+                toast.error('Opps! Something wrong try again.');
                 reset()
             }
-            console.log(data)
         })
     };
     let showErrorMessage;
