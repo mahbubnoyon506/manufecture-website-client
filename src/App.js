@@ -18,6 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ManageProducts from './pages/Dashboard/ManageProducts';
 import AddNewProduct from './pages/Dashboard/AddNewProduct';
+import ManageOrders from './pages/Dashboard/ManageOrders';
 
 
 function App() {
@@ -43,11 +44,12 @@ function App() {
           <Route path='users' element={<AllUser></AllUser>}></Route>
           <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
           <Route path='addnewproduct' element={<AddNewProduct></AddNewProduct>}></Route>
+          <Route path='manageorders' element={<ManageOrders></ManageOrders>}></Route>
         </Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
         <Route path='/resetpass' element={<ResetPass></ResetPass>} ></Route>
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
       <ToastContainer />
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
-const ManageProductsTable = ({ service, index }) => {
+const ManageProductsTable = ({ service, index, refetch }) => {
     const {_id, img, name, available } = service;
     const submit = () => {
         const url = `http://localhost:5000/services/${_id}`;
@@ -18,6 +18,7 @@ const ManageProductsTable = ({ service, index }) => {
                 
             }
             console.log(data)
+           refetch()
         })
 
         confirmAlert({

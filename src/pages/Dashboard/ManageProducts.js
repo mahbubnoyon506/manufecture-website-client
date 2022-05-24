@@ -1,10 +1,15 @@
 import React from 'react';
-import useServices from '../../hooks/UseServices';
+import { useQuery } from 'react-query';
+import Loader from '../../components/Loader';
 import ManageProductsTable from './ManageProductsTable';
 
 const ManageProducts = () => {
-    const [services] = useServices();
-    console.log(services)
+    const {data: services, isLoading, refetch} = useQuery('services', () => 
+    fetch('http://localhost:5000/services')
+    .then(res => res.json()));
+    if(isLoading){
+        return <Loader></Loader>
+    }
     return (
         <div class="overflow-x-auto">
             <table class="table w-full">
@@ -19,7 +24,7 @@ const ManageProducts = () => {
                 </thead>
                 <tbody>
                      {
-                         services.map((service, index) => <ManageProductsTable key={service._id} service={service} index={index}></ManageProductsTable>)
+                         services.map((service, index) => <ManageProductsTable key={service._id} service={service} index={index} refetch={refetch}></ManageProductsTable>)
                      }
                 </tbody>
             </table>

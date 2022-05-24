@@ -1,87 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 import useServiceId from '../../hooks/useServiceId';
+import PurchaseModal from './PurchaseModal';
 
 const Purchase = () => {
-    const { id } = useParams();
+    const [user] = useAuthState(auth);
+    const [purchase, setPurchase] = useState(null)
     const [service] = useServiceId();
-    // const [service, setService]= useState(id);
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = async (data) => {
-
-    };
-    let showErrorMessage;
-    if (errors) {
-        showErrorMessage = <small className='text-red-500'>{errors.message}</small>
+    const handleOnBlour = e => {
+        setPurchase(e.target.value)
     }
-
     return (
         <div>
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content flex-col lg:flex-row">
-                    <div class="text-center lg:text-left">
-                        <img src={service.img} alt="" />
-                        <h1 class="text-4xl font-bold">{service.name}</h1>
-                        <p class="py-2 text-accent text-xl">Product price per unit <span className='text-primary'>${service.price}</span></p>
-                        <p class="py-2 text-accent text-xl">Available products in stock <span className='text-primary'>{service.available} pieces.</span></p>
-                        <p class="py-2 text-accent text-xl">Minimum order quantity <span className='text-primary'>{service.minimum} pieces.</span></p>
-                        <p ><span class="font-semibold">Products Description:</span> {service.description}</p>
-                    </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card-body">
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <label class="label">
-                                    <span class="label-text">What is your Email?</span>
-                                </label>
-                                <input
-                                    type="email"
-                                    placeholder="Type here"
-                                    class="input input-sm input-bordered w-full max-w-xs focus:outline-0"
-                                    {...register('email', {
-                                        required: {
-                                            value: true,
-                                            message: 'Email is required'
-                                        },
-                                        pattern: {
-                                            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                                            message: 'Type the right pattern of email.'
-                                        }
-                                    })}
-                                />
-                                <label class="label">
-                                    {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                    {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                </label>
-                                {/* email field end and password field start */}
-                                <label class="label">
-                                    <span class="label-text">What is your password?</span>
-                                </label>
-                                <input
-                                    type="password"
-                                    placeholder="Type here"
-                                    class="input input-sm input-bordered w-full max-w-xs focus:outline-0"
-                                    {...register('password', {
-                                        required: {
-                                            value: true,
-                                            message: 'Password is required'
-                                        },
-                                        pattern: {
-                                            value: ``,
-                                            message: 'Password needs at least 8 character with contain a uppercase a lowercase and number.'
-                                        }
-                                    })}
-                                />
-                                <label class="label">
-                                    {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                    {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                </label>
-                                {showErrorMessage}
-                                <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Confirm Purchase" />
-                            </form>
+            <div class="hero min-h-screen bg-base-200 px-10">
+                <div class="">
+                    <h2 class="py-1 text-2xl font-bold">{user.displayName}</h2>
+                    <h2 class="py-1 text-2xl font-bold">Email Account: {user.email}</h2>
+                    <h4 class="pb-4 text-xl ">You have selected the product <span className='text-primary font-bold'>{service.name}</span>. Type your expected quantity and confirm puchase process.</h4>
+                    <div class="text-center grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="card w-full shadow-2xl bg-base-100">
+                            <div class="card-body">
+                                <img className='w-full' src={service.img} alt="" />
+                            </div>
+                        </div>
+                        <div className='lg:text-left my-auto'>
+                            <h1 class="text-4xl font-bold">{service.name}</h1>
+                            <p class=" text-accent text-xl">Product price per unit <span className='text-primary'>${service.price}</span></p>
+                            <p class=" text-accent text-xl">Available products in stock <span className='text-primary'>{service.available} pieces.</span></p>
+                            <p class=" text-accent text-xl">Minimum order quantity <span className='text-primary'>{service.minimum} pieces.</span></p>
+                            <div className='my-3'>
+                                {purchase && <PurchaseModal purchase={purchase} user={user} service={service} setPurchase={setPurchase}></PurchaseModal>}
+                                <label onClick={() => setPurchase(purchase)} for="purchase-confirm" class="btn btn-sm bg-primary text-white border-0 h-12">Pick Quantity</label>
+                                <input required onBlur={handleOnBlour} class="input input-bordered focus:outline-0 py-5 ml-2" type="number" />
+                            </div>
                         </div>
                     </div>
+                    <div className='py-5'> <p ><span class="font-semibold">Products Description:</span> {service.description}</p></div>
                 </div>
             </div>
         </div>
