@@ -2,7 +2,6 @@ import React from 'react';
 
 const OrderTable = ({order, index}) => {
     const {product, email, amount} = order
-    console.log(order)
     return (
         <tr class="hover">
             <th>{index + 1}</th>

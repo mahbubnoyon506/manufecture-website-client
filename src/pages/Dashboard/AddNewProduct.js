@@ -62,6 +62,7 @@ const AddNewProduct = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input
                                 type="text"
+                                placeholder='Photo URL'
                                 class="input input-sm input-bordered w-full py-5 focus:outline-0"
                                 {...register('img', {
                                     required: {
