@@ -24,8 +24,6 @@ const OrderTable = ({ order, index, refetch }) => {
                 } else {
                     toast.error('This order is still unpaid.')
                 }
-                console.log(data)
-
             })
     }
     return (
@@ -47,7 +45,7 @@ const OrderTable = ({ order, index, refetch }) => {
                     paid && shipped ?
                         <p class="text-md text-primary">Shipped</p>
                         :
-                        <button onClick={handleShipping} class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-0">To Shipped</button>
+                        <button onClick={handleShipping} class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-0">Pending</button>
                 }
 
             </td>

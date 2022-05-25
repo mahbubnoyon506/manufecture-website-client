@@ -20,6 +20,8 @@ import ManageProducts from './pages/Dashboard/ManageProducts';
 import AddNewProduct from './pages/Dashboard/AddNewProduct';
 import ManageOrders from './pages/Dashboard/ManageOrders';
 import Payment from './pages/Dashboard/Payment';
+import NotFound from './pages/NotFound/NotFound';
+import AllProduct from './pages/AllProduct/AllProduct';
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>
+        <Route path='/allproduct' element={<AllProduct></AllProduct>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
         <Route path='/purchase/:id' element={
           <Requiredauth>
@@ -50,8 +53,10 @@ function App() {
         </Route>
         <Route path='/signup' element={<Signup></Signup>} ></Route>
         <Route path='/resetpass' element={<ResetPass></ResetPass>} ></Route>
+        <Route path='*' element={<NotFound></NotFound>} ></Route>
       </Routes>
       {/* <Footer></Footer> */}
+      
       <ToastContainer />
     </div>
   );

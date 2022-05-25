@@ -43,7 +43,6 @@ const Purchase = () => {
                                 {purchase && <PurchaseModal purchase={purchase} user={user} service={service} setPurchase={setPurchase}></PurchaseModal>}
                                 <label disabled={!purchase} onClick={() => setPurchase(purchase)} for="purchase-confirm" class="btn btn-sm bg-primary text-white border-0 h-12">Pick Quantity</label>
                                 <input required onChange={handleOnBlour} class="input input-bordered focus:outline-0 py-5 ml-2" type="number" />
-                                {shoeError}
                             </div>
                         </div>
                     </div>
