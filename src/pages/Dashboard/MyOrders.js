@@ -9,7 +9,7 @@ import MyOrderTable from './MyOrderTable';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const url = `http://localhost:5000/order?email=${user.email}`
-    const { data: orders, isLoading, refetch } = useQuery('single-order', () => fetch(url)
+    const { data: orders, isLoading} = useQuery('single-order', () => fetch(url)
         .then(res => res.json()))
 
     if (isLoading) {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useServiceId from '../../hooks/useServiceId';
@@ -10,9 +11,15 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
     const [purchase, setPurchase] = useState(null)
     const [service] = useServiceId();
+    const [error, setError] = useState(false)
 
     const handleOnBlour = e => {
         setPurchase(e.target.value)
+    }
+
+    let shoeError;
+    if(error){
+        shoeError= <p>{error}</p>
     }
     return (
         <div>
@@ -34,8 +41,9 @@ const Purchase = () => {
                             <p class=" text-accent text-xl">Minimum order quantity <span className='text-primary'>{service.minimum} pieces.</span></p>
                             <div className='my-3'>
                                 {purchase && <PurchaseModal purchase={purchase} user={user} service={service} setPurchase={setPurchase}></PurchaseModal>}
-                                <label onClick={() => setPurchase(purchase)} for="purchase-confirm" class="btn btn-sm bg-primary text-white border-0 h-12">Pick Quantity</label>
-                                <input required onBlur={handleOnBlour} class="input input-bordered focus:outline-0 py-5 ml-2" type="number" />
+                                <label disabled={!purchase} onClick={() => setPurchase(purchase)} for="purchase-confirm" class="btn btn-sm bg-primary text-white border-0 h-12">Pick Quantity</label>
+                                <input required onChange={handleOnBlour} class="input input-bordered focus:outline-0 py-5 ml-2" type="number" />
+                                {shoeError}
                             </div>
                         </div>
                     </div>

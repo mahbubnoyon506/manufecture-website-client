@@ -89,7 +89,7 @@ const AddReview = () => {
                                 {errors.review?.type === 'required' && <span className="label-text-alt text-red-500">{errors.review.message}</span>}
                             </label>
                             {showErrorMessage}
-                            <input className='btn btn-sm w-full bg-primary text-white border-0 py-5' type="submit" value="Add Review" />
+                            <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Add Review" />
                         </form>
                     </div>
                 </div>

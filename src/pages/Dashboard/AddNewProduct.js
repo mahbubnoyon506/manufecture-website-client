@@ -145,7 +145,7 @@ const AddNewProduct = () => {
                                 {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
                             </label>
                             {showErrorMessage}
-                            <input className='btn btn-sm w-full bg-primary text-white border-0 py-5' type="submit" value="Add Item" />
+                            <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Add Item" />
                         </form>
                     </div>
                 </div>

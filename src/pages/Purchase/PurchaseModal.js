@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 
 const PurchaseModal = ({purchase, user, service, setPurchase}) => {
     const { email, displayName } = user;
-    const {price, name} =service
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const {_id, price, name, available} =service
+    const { register, formState: { errors }, handleSubmit} = useForm();
     const amount = (price * purchase);
-    console.log(amount)
+    const updated = (available - purchase);
     const onSubmit = data => {
         const order = {
             product:name,
@@ -28,7 +28,23 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
         .then(res => res.json())
         .then( result => {
             toast.success('Congrats!! Your order is placed.')
-            setPurchase(null)
+            setPurchase(null);
+        })
+
+         const current = {
+             available:updated,
+            };
+        fetch(`http://localhost:5000/service/${_id}`, {
+          method: 'PUT',
+          headers: {
+              'content-type' : 'application/json',
+              'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
+          },
+          body: JSON.stringify(current)
+        })
+        .then(res => res.json())
+        .then(update => {
+            console.log(update)
         })
     };
     let showErrorMessage;

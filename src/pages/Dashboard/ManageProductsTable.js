@@ -50,7 +50,7 @@ const ManageProductsTable = ({ service, index, refetch }) => {
             </td>
             <td>{name}</td>
             <td>{available}</td>
-            <td><button onClick={submit} class="btn btn-outline btn-xs hover:bg-primary">Remove</button></td>
+            <td><button onClick={submit} class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary">Remove</button></td>
         </tr>
     );
 };
