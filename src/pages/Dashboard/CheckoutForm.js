@@ -1,13 +1,16 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import Loader from '../../components/Loader';
 
 const CheckoutForm = ({ order }) => {
     const stripe = useStripe();
     const elements = useElements();
-    const [cardError, setCardError] = useState('')
-    const [success, setSuccess] = useState('')
+    const [cardError, setCardError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [processing, setProcessing] = useState(false);
+    const [transectionId, setTransectionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
-    const { amount, name, email } = order;
+    const {_id, amount, name, email } = order;
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
@@ -42,6 +45,7 @@ const CheckoutForm = ({ order }) => {
 
         setCardError(error?.message || '');
         setSuccess('')
+        setProcessing(true)
 
         const { paymentIntent, intentError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -57,12 +61,34 @@ const CheckoutForm = ({ order }) => {
         );
 
         if (intentError) {
-            setCardError(intentError?.message)
+            setCardError(intentError?.message);
+            setProcessing(false)
         }
         else {
             setCardError('');
+            setTransectionId(paymentIntent.id)
             console.log(paymentIntent)
-            setSuccess('Congrats! Your payment completed')
+            setSuccess('Congrats! Your payment completed');
+            const payment = {
+                orderedId : _id,
+                transectionId : paymentIntent.id
+            }
+            fetch(`http://localhost:5000/orders/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type' : 'application/json',
+                    'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+            })
+            .then(res => res.json())
+            .then( data => {
+                setProcessing(false)
+                console.log(data)
+            })
+        }
+        if(processing){
+            return <Loader></Loader>
         }
     }
 
@@ -94,7 +120,10 @@ const CheckoutForm = ({ order }) => {
                         cardError && <p className='text-red-500'>{cardError}</p>
                     }
                     {
-                        success && <p className='text-primary'>{success}</p>
+                        success && <div className="text-xl text-primary text-bold">
+                            <p>{success}</p>
+                            <p>Your payment ID: <span className="text-secondary">{transectionId}</span></p>
+                        </div>
                     }
                 </>
             </form>
