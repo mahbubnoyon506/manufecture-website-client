@@ -1,9 +1,9 @@
 import React from 'react';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
-const ManageProductsTable = ({ service, index, refetch }) => {
-    const {_id, img, name, available } = service;
+
+
+const ManageProductsTable = ({ service, index, refetch, setDeleteProduct }) => {
+    const { _id, img, name, available } = service;
     const submit = () => {
         const url = `http://localhost:5000/services/${_id}`;
         fetch(url, {
@@ -12,30 +12,14 @@ const ManageProductsTable = ({ service, index, refetch }) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res => res.json())
-        .then( data => {
-            if(data.deletedCount){
-                
-            }
-            console.log(data)
-           refetch()
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
 
-        confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do this.',
-            buttons: [
-                {
-                    label: 'Yes',
-                    onClick: () => alert('Click Yes')
-                },
-                {
-                    label: 'No',
-                    onClick: () => alert('Click No')
                 }
-            ]
-        });
-
+                console.log(data)
+                refetch()
+            })
     };
 
     return (
@@ -50,7 +34,9 @@ const ManageProductsTable = ({ service, index, refetch }) => {
             </td>
             <td>{name}</td>
             <td>{available}</td>
-            <td><button onClick={submit} class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary">Remove</button></td>
+            <td>
+                <label onClick={() => setDeleteProduct(service)} for="manageProducts" class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary">Remove</label>
+            </td>
         </tr>
     );
 };

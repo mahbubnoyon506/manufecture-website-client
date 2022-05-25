@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import Loader from '../../components/Loader'
 import auth from '../../firebase.init';
+import DeleteMyOrder from './DeleteMyOrder';
 import MyOrderTable from './MyOrderTable';
 
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
+    const [deleteOrder, setDeleteOrder] = useState(null)
     const url = `http://localhost:5000/order?email=${user.email}`
     const { data: orders, isLoading} = useQuery('single-order', () => fetch(url)
         .then(res => res.json()))
@@ -31,10 +33,13 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map((order, index) => <MyOrderTable key={order._id} order={order} index={index}></MyOrderTable>)
+                        orders.map((order, index) => <MyOrderTable key={order._id} order={order} index={index} setDeleteOrder={setDeleteOrder}></MyOrderTable>)
                     }
                 </tbody>
             </table>
+             {
+                 deleteOrder && <DeleteMyOrder></DeleteMyOrder>
+             }
         </div>
     );
 };

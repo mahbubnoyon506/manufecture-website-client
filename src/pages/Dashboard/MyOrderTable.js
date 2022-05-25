@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyOrderTable = ({ order, index }) => {
+const MyOrderTable = ({ order, index, setDeleteOrder }) => {
     const { _id, trasectionId, shipped, paid, product, amount, quantity } = order;
+
     return (
         <tr class="hover">
             <th>{index + 1}</th>
@@ -21,12 +22,12 @@ const MyOrderTable = ({ order, index }) => {
             </td>
             <td>
                 {
-                  ( (paid && shipped ) && <p class="text-md text-primary">Shipped</p>) || ((paid && !shipped ) && <p class="text-md text-red-500">Pending</p>)
+                    ((paid && shipped) && <p class="text-md text-primary">Shipped</p>) || ((paid && !shipped) && <p class="text-md text-red-500">Pending</p>)
                 }
             </td>
             <td>
                 {
-                    !paid && <button className='btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary'>Cancel Order</button>
+                    !paid && <label onClick={() => setDeleteOrder(order)} for="deleteOrder" className='btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary'>Cancel Order</label>
                 }
             </td>
         </tr>

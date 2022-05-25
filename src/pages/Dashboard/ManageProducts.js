@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loader from '../../components/Loader';
+import ManageProductsModal from './ManageProductsModal';
 import ManageProductsTable from './ManageProductsTable';
 
 const ManageProducts = () => {
+    const [deleteProduct, setDeleteProduct] = useState(null);
     const {data: services, isLoading, refetch} = useQuery('services', () => 
     fetch('http://localhost:5000/services')
     .then(res => res.json()));
@@ -24,10 +26,11 @@ const ManageProducts = () => {
                 </thead>
                 <tbody>
                      {
-                         services.map((service, index) => <ManageProductsTable key={service._id} service={service} index={index} refetch={refetch}></ManageProductsTable>)
+                         services.map((service, index) => <ManageProductsTable key={service._id} service={service} index={index} refetch={refetch} setDeleteProduct={setDeleteProduct}></ManageProductsTable>)
                      }
                 </tbody>
             </table>
+            {deleteProduct && <ManageProductsModal></ManageProductsModal>}
         </div>
     );
 };
