@@ -29,7 +29,7 @@ import Blogs from './pages/Blogs/Blogs';
 
 function App() {
   return (
-    <div >
+    <div className=''>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>

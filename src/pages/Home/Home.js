@@ -6,6 +6,7 @@ import Category from './Category';
 import MiddleSec from './MiddleSec';
 import Clients from './Clients';
 import CustomerReview from './CustomerReview';
+import Footer from '../../components/Footer';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <CustomerReview></CustomerReview>
             <BusinessReview></BusinessReview>
             <Clients></Clients>
+            <Footer></Footer>
         </div>
     );
 };

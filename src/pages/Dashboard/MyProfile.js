@@ -35,7 +35,7 @@ const MyProfile = () => {
                 <div class="max-w-md">
                     <div class="avatar">
                         <div class="w-24 rounded-full">
-                            <img src="https://api.lorem.space/image/face?hash=92310" />
+                            <img src="https://api.lorem.space/image/face?hash=92310" alt='' />
                             {/* <img src={image} alt="" /> */}
                         </div>
                     </div>
