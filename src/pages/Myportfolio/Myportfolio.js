@@ -26,7 +26,7 @@ const Myportfolio = () => {
                         <p className='text-md font-semibold'>Junior Full Stack Web Developer</p>
                         <p className='text-md '>I am an expert in Front End and Backend Development with <span className='text-primary'>React JS | Node Js | MongoDB</span> </p>
 
-                        <div className='mt-5'>
+                        <div className='mt-5 lg:flex justify-between '>
                             <ul>
                                 <li><Link className='text-accent hover:text-primary' to='#'><button className='my-2 mr-2'><FaPhone></FaPhone></button> +8801687874697</Link></li>
                                 <li><Link className='text-accent hover:text-primary' to='#'><button className='my-2 mr-2'><FaAddressCard></FaAddressCard></button>Kawlar Airport, Dhaka-1230</Link></li>
@@ -35,9 +35,13 @@ const Myportfolio = () => {
                                 <li><Link className='text-accent hover:text-primary' to='#'><button className='my-2 mr-2'><FaGlobe></FaGlobe></button>webapparchitect.com</Link></li>
                                 <li><Link className='text-accent hover:text-primary' to='#'><button className='my-2 mr-2'><FaLinkedinIn></FaLinkedinIn></button>linkedin.com/in/mahbubnoyon/</Link></li>
                             </ul>
-
-                            {/* FaGithub FaInstagram FaLinkedinIn FaStackOverflow FaWhatsapp FaAddressCard FaDatabase FaEnvelope FaGlobe FaMapMarkerAlt FaUserTie FaRegUserCircle  */}
-
+                            <div className='sm:mt-5 md:mt-5'>
+                                <h2 className='text-xl text-accent'>Site That I have done Recently</h2>
+                                <ul>
+                                    <li><Link className='text-accent hover:text-primary' to='#'><button className='my-2 mr-2'><FaGlobe></FaGlobe></button>warehouse-management-630a3.firebaseapp.com</Link></li>
+                                    <li><Link className='text-accent hover:text-primary' to='#'><button className='my-2 mr-2'><FaGlobe></FaGlobe></button>david-louise-fitness-trainer.web.app</Link></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +74,7 @@ const Myportfolio = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mr-20 pb-10'>
+                <div className='mx-20 pb-10 lg:ml-0 '>
                     <h2 className='text-2xl text-primary font-semibold mb-3'>My Skills</h2>
                     <div>
                         <div>HTML 90% <input type="range" min="0" max="100" value="90" placeholder='80' class="range range-primary range-xs" /></div>
