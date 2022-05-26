@@ -23,6 +23,7 @@ import Payment from './pages/Dashboard/Payment';
 import NotFound from './pages/NotFound/NotFound';
 import AllProduct from './pages/AllProduct/AllProduct';
 import RequiredAdmin from './pages/Login/RequiredAdmin';
+import Myportfolio from './pages/Myportfolio/Myportfolio';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/allproduct' element={<AllProduct></AllProduct>} ></Route>
         <Route path='/login' element={<Login></Login>} ></Route>
+        <Route path='/myportfolio' element={<Myportfolio></Myportfolio>} ></Route>
         <Route path='/purchase/:id' element={
           <Requiredauth>
             <Purchase></Purchase>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const ProfileUpdate = ({ profUser }) => {
+const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
     const {email} = profUser;
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const onSubmit = async (data) => {
@@ -29,25 +29,27 @@ const ProfileUpdate = ({ profUser }) => {
                return res.json()})
             .then(data => {
                 console.log(data)
-                // if (data.acknowledged === true) {
-                //     toast.success('Wow!, Your review successfully posted, Thanks.');
-                //     reset()
-                // } else {
-                //     toast.error('Opps! Something wrong try again.');
-                //     reset()
-                // }
+                if (data.modifiedCount > 0) {
+                    toast.success('Your profile updated');
+                    reset()
+                    setUpdateProfile('')
+                } else {
+                    toast.error('Opps! Something wrong try again.');
+                    reset()
+                }
             })
     };
     let showErrorMessage;
     if (errors) {
         showErrorMessage = <small className='text-red-500'>{errors.message}</small>
     }
+
     return (
         <div>
             <input type="checkbox" id="profModal" class="modal-toggle" />
             <div class="modal">
                 <div class="modal-box relative">
-                    <label for="profModal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label for="profModal" class="btn btn-sm btn-circle bg-primary text-base-100 absolute right-2 top-2">✕</label>
                     <h2 className='text-xl text-primary text-center py-3'>Update your profile info</h2>
                     <div className='mx-5'>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -86,7 +88,7 @@ const ProfileUpdate = ({ profUser }) => {
                                 {errors.city?.type === 'required' && <span className="label-text-alt text-red-500">{errors.city.message}</span>}
                             </label>
                         <label class="label">
-                                <span class="label-text">What is your city?</span>
+                                <span class="label-text">What is your State?</span>
                             </label>
                             <input
                                 type="text"
@@ -103,7 +105,7 @@ const ProfileUpdate = ({ profUser }) => {
                                 {errors.state?.type === 'required' && <span className="label-text-alt text-red-500">{errors.state.message}</span>}
                             </label>
                         <label class="label">
-                                <span class="label-text">What is your city?</span>
+                                <span class="label-text">What is your Country?</span>
                             </label>
                             <input
                                 type="text"
@@ -120,7 +122,7 @@ const ProfileUpdate = ({ profUser }) => {
                                 {errors.country?.type === 'required' && <span className="label-text-alt text-red-500">{errors.country.message}</span>}
                             </label>
                         <label class="label">
-                                <span class="label-text">What is your city?</span>
+                                <span class="label-text">What is your contact?</span>
                             </label>
                             <input
                                 type="text"
@@ -137,7 +139,7 @@ const ProfileUpdate = ({ profUser }) => {
                                 {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                             </label>
                         <label class="label">
-                                <span class="label-text">What is your city?</span>
+                                <span class="label-text">What is your Photo url?</span>
                             </label>
                             <input
                                 type="text"
@@ -156,7 +158,7 @@ const ProfileUpdate = ({ profUser }) => {
 
 
                             {showErrorMessage}
-                            <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Add Review" />
+                            <input className='btn btn-sm w-full bg-primary text-white border-0' type="submit" value="Update Profile" />
                         </form>
                     </div>
 

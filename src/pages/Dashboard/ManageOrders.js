@@ -4,7 +4,7 @@ import Loader from '../../components/Loader';
 import OrderTable from './OrderTable';
 
 const ManageOrders = () => {
-    const {data: orders, isLoading, refetch} = useQuery('orders', () => 
+    const {data:orders, isLoading, refetch} = useQuery('allOrders', () => 
     fetch('http://localhost:5000/orders', {
         method: 'GET',
         headers: {
