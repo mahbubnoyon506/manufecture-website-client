@@ -14,7 +14,7 @@ const AddReview = () => {
             review: data.review,
             point: data.point
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://shielded-refuge-26741.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

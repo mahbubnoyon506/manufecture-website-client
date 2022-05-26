@@ -5,7 +5,7 @@ const useServiceId = () => {
     const {id} = useParams();
     const [service, setService]= useState(id);
     useEffect(() => {
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `https://shielded-refuge-26741.herokuapp.com/services/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {

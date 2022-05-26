@@ -6,6 +6,7 @@ const BusinessReview = () => {
             <h2 className='text-center text-3xl text-primary uppercase font-bold pt-20'>Millions of Clients trust us</h2>
             <h4 className='text-center text-xl text-primary uppercase font-semibold py-5'>Our business status</h4>
             <div class="stats shadow-2xl w-full">
+
                 <div class="stat place-items-center">
                     <div class="stat-title">Our Revenue</div>
                     <div class="stat-value">145+</div>

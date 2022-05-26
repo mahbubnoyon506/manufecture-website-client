@@ -5,7 +5,7 @@ import UsersTable from './UsersTable';
 
 const AllUser = () => {
     const {data: users, isLoading, refetch } = useQuery('allUsers', () =>
-    fetch('http://localhost:5000/users', {
+    fetch('https://shielded-refuge-26741.herokuapp.com/users', {
         method: 'GET',
         headers: {
            'content-type' : 'application/json',

@@ -6,8 +6,8 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            // const url = `http://localhost:5000/admin/${email}`;
-            const url = `http://localhost:5000/user?email=${email}`;
+            // const url = `https://shielded-refuge-26741.herokuapp.com/admin/${email}`;
+            const url = `https://shielded-refuge-26741.herokuapp.com/user?email=${email}`;
             fetch(url, {
                 method: 'GET',
                 headers: {

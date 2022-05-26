@@ -13,7 +13,7 @@ import ProfileUpdate from './ProfileUpdate';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [updateProfile, setUpdateProfile] = useState(null)
-    const url = `http://localhost:5000/user?email=${user.email}`
+    const url = `https://shielded-refuge-26741.herokuapp.com/user?email=${user.email}`
     const { data: profUser, isLoading, refetch } = useQuery('users', () => fetch(url, {
         method: 'GET',
         headers: {
@@ -25,7 +25,7 @@ const MyProfile = () => {
     if (isLoading) {
         return <Loader></Loader>
     }
-    const {image, email, phone, profession, address } = profUser;
+    // const {image, email, phone, profession, address } = profUser;
 
     return (
         <div class="hero min-h-screen bg-base-200">
@@ -35,15 +35,15 @@ const MyProfile = () => {
                 <div class="max-w-md">
                     <div class="avatar">
                         <div class="w-24 rounded-full">
-                            <img src="https://api.lorem.space/image/face?hash=92310" alt='' />
+                            <img src={profUser?.image} alt='' />
                             {/* <img src={image} alt="" /> */}
                         </div>
                     </div>
-                    <h1 class="text-2xl font-bold">{user.displayName}</h1>
-                    <p class="py-2">Profession: {profession}</p>
-                    <p class="py-2">State: {address.state} City: {address.city} Country: {address.country} </p>
-                    <p class="py-2">Email: {email} </p>
-                    <p class="py-2">Phone: {phone}</p>
+                    <h1 class="text-2xl font-bold">{user?.displayName}</h1>
+                    <p class="py-2">Profession: {profUser?.profession}</p>
+                    <p class="py-2">State: {profUser?.address?.state} City: {profUser?.address?.city} Country: {profUser?.address?.country} </p>
+                    <p class="py-2">Email: {profUser?.email} </p>
+                    <p class="py-2">Phone: {profUser?.phone}</p>
                     <div>
                         <div class="tooltip" data-tip="Facebook">
                             <button class="btn btn-sm mx-2"><FaFacebook></FaFacebook></button>

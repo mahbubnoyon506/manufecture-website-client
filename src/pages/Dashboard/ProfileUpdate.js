@@ -16,7 +16,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
             phone: data.phone,
             image: data.photo
         }
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://shielded-refuge-26741.herokuapp.com/users/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -33,6 +33,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                     toast.success('Your profile updated');
                     reset()
                     setUpdateProfile('')
+                    refetch()
                 } else {
                     toast.error('Opps! Something wrong try again.');
                     reset()
