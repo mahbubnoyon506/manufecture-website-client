@@ -17,9 +17,9 @@ const Purchase = () => {
         setPurchase(e.target.value)
     }
 
-    let shoeError;
+    let showError;
     if(error){
-        shoeError= <p>{error}</p>
+        showError= <p>{error}</p>
     }
     return (
         <div>

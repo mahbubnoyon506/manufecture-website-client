@@ -2,25 +2,8 @@ import React from 'react';
 
 
 
-const ManageProductsTable = ({ service, index, refetch, setDeleteProduct }) => {
-    const { _id, img, name, available } = service;
-    const submit = () => {
-        const url = `http://localhost:5000/services/${_id}`;
-        fetch(url, {
-            method: 'DELETE',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-
-                }
-                console.log(data)
-                refetch()
-            })
-    };
+const ManageProductsTable = ({ service, index, setDeleteProduct }) => {
+    const { img, name, available } = service;
 
     return (
         <tr>

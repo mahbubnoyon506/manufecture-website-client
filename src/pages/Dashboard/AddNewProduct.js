@@ -31,11 +31,12 @@ const AddNewProduct = () => {
            price: data.price,
            description: data.description,
         }
-        console.log(product)
+
         fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(product)
         })

@@ -11,8 +11,13 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [deleteOrder, setDeleteOrder] = useState(null)
     const url = `http://localhost:5000/order?email=${user.email}`
-    const { data: orders, isLoading} = useQuery('single-order', () => fetch(url)
-        .then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery('single-order', () => fetch(url, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+    .then(res => res.json()))
 
     if (isLoading) {
         return <Loader></Loader>
@@ -37,9 +42,9 @@ const MyOrders = () => {
                     }
                 </tbody>
             </table>
-             {
-                 deleteOrder && <DeleteMyOrder></DeleteMyOrder>
-             }
+            {
+                deleteOrder && <DeleteMyOrder deleteOrder={deleteOrder} setDeleteOrder={setDeleteOrder} refetch={refetch}></DeleteMyOrder>
+            }
         </div>
     );
 };

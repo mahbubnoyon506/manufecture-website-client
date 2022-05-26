@@ -7,7 +7,12 @@ import ManageProductsTable from './ManageProductsTable';
 const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
     const {data: services, isLoading, refetch} = useQuery('services', () => 
-    fetch('http://localhost:5000/services')
+    fetch('http://localhost:5000/services', {
+        method: 'GET',
+        headers: {
+            'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
     .then(res => res.json()));
     if(isLoading){
         return <Loader></Loader>
@@ -30,7 +35,7 @@ const ManageProducts = () => {
                      }
                 </tbody>
             </table>
-            {deleteProduct && <ManageProductsModal></ManageProductsModal>}
+            {deleteProduct && <ManageProductsModal refetch={refetch} setDeleteProduct={setDeleteProduct} deleteProduct={deleteProduct}></ManageProductsModal>}
         </div>
     );
 };

@@ -11,7 +11,12 @@ const stripePromise = loadStripe('pk_test_51L0m3ZDl4aqKhSry404LiN0wWgPfpHi09C4GA
 const Payment = () => {
     const { id } = useParams();
     const { data: order, isLoading } = useQuery('orderid', () =>
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`http://localhost:5000/orders/${id}`, {
+            method: 'GET',
+            headers: {
+                'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => {
                 return res.json()
             })

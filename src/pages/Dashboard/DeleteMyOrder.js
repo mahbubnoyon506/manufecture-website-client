@@ -1,6 +1,27 @@
 import React from 'react';
 
-const DeleteMyOrder = () => {
+const DeleteMyOrder = ({deleteOrder, setDeleteOrder, refetch}) => {
+    const {_id} = deleteOrder;
+    console.log(_id)
+    const handleDeleteOrder = () => {
+        const url = `http://localhost:5000/orders/${_id}`;
+       fetch(url, {
+           method: 'DELETE',
+           headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }           
+       })
+       .then(res => {
+           console.log(res)
+          return res.json()})
+       .then(data => {
+           console.log(data)
+           refetch()
+       })    
+    }
+  const handleCancel = () => {
+    setDeleteOrder('')
+  }
     return (
         <div>
             <input type="checkbox" id="deleteOrder" class="modal-toggle" />
@@ -12,8 +33,8 @@ const DeleteMyOrder = () => {
                             <span className='text-xl text-red-600'>Are you sure to delete!</span>
                         </div>
                         <div class="flex-none">
-                            <button class="btn btn-sm bg-red-600 text-base-100 hover:bg-red-600">Delete</button>
-                            <button class="btn btn-sm btn-primary">Cancel</button>
+                            <button onClick={handleDeleteOrder} class="btn btn-sm bg-red-600 text-base-100 hover:bg-red-600">Delete</button>
+                            <button onClick={handleCancel} class="btn btn-sm btn-primary">Cancel</button>
                         </div>
                     </div>
                 </label>

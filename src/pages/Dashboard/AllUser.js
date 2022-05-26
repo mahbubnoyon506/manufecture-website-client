@@ -4,11 +4,12 @@ import Loader from '../../components/Loader';
 import UsersTable from './UsersTable';
 
 const AllUser = () => {
-    const {data: users, isLoading, refetch } = useQuery('users', () =>
+    const {data: users, isLoading, refetch } = useQuery('allUsers', () =>
     fetch('http://localhost:5000/users', {
         method: 'GET',
         headers: {
-            'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
+           'content-type' : 'application/json',
+            authorization : `Bearer ${localStorage.getItem('accessToken')}`
         }
     })
     .then(res => {
