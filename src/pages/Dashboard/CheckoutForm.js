@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
     const [clientSecret, setClientSecret] = useState('');
     const {_id, amount, name, email } = order;
     useEffect(() => {
-        fetch('https://shielded-refuge-26741.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -74,7 +74,7 @@ const CheckoutForm = ({ order }) => {
                 orderedId : _id,
                 transectionId : paymentIntent.id
             }
-            fetch(`https://shielded-refuge-26741.herokuapp.com/orders/${_id}`, {
+            fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type' : 'application/json',

@@ -13,7 +13,7 @@ import ProfileUpdate from './ProfileUpdate';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [updateProfile, setUpdateProfile] = useState(null)
-    const url = `https://shielded-refuge-26741.herokuapp.com/user?email=${user.email}`
+    const url = `http://localhost:5000/profiles?email=${user.email}`
     const { data: profUser, isLoading, refetch } = useQuery('users', () => fetch(url, {
         method: 'GET',
         headers: {
@@ -25,7 +25,7 @@ const MyProfile = () => {
     if (isLoading) {
         return <Loader></Loader>
     }
-    // const {image, email, phone, profession, address } = profUser;
+  
 
     return (
         <div class="hero min-h-screen bg-base-200">

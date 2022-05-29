@@ -18,7 +18,7 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
             address: data.address,
             amount: amount,
         }
-        fetch('https://shielded-refuge-26741.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',
@@ -35,7 +35,7 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
          const current = {
              available:updated,
             };
-        fetch(`https://shielded-refuge-26741.herokuapp.com/service/${_id}`, {
+        fetch(`http://localhost:5000/service/${_id}`, {
           method: 'PUT',
           headers: {
               'content-type' : 'application/json',

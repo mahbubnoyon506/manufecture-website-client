@@ -5,7 +5,7 @@ import useService from '../../hooks/useServiceId'
 const ManageProductsModal = ({refetch, setDeleteProduct, deleteProduct}) => {
      const {_id} = deleteProduct;
     const handleremove = () =>{
-        const url = `https://shielded-refuge-26741.herokuapp.com/services/${_id}`;
+        const url = `http://localhost:5000/services/${_id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

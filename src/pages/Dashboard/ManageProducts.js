@@ -7,7 +7,7 @@ import ManageProductsTable from './ManageProductsTable';
 const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
     const {data: services, isLoading, refetch} = useQuery('services', () => 
-    fetch('https://shielded-refuge-26741.herokuapp.com/services', {
+    fetch('http://localhost:5000/services', {
         method: 'GET',
         headers: {
             'authorization' : `Bearer ${localStorage.getItem('accessToken')}`

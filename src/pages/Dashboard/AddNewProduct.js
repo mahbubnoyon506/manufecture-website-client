@@ -32,7 +32,7 @@ const AddNewProduct = () => {
            description: data.description,
         }
 
-        fetch('https://shielded-refuge-26741.herokuapp.com/services', {
+        fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',

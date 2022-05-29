@@ -1,22 +1,27 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
-    const {email} = profUser;
+    const [user] = useAuthState(auth);
+    const { email } = profUser;
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const onSubmit = async (data) => {
         const profile = {
+            name: user.displayName,
+            email: user.email,
             profession: data.profession,
             address: {
                 city: data.city,
-                state : data.state,
+                state: data.state,
                 country: data.country
             },
             phone: data.phone,
             image: data.photo
         }
-        fetch(`https://shielded-refuge-26741.herokuapp.com/users/${email}`, {
+        fetch(`http://localhost:5000/profiles/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -26,7 +31,8 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
         })
             .then(res => {
                 console.log(res)
-               return res.json()})
+                return res.json()
+            })
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount > 0) {
@@ -54,7 +60,19 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                     <h2 className='text-xl text-primary text-center py-3'>Update your profile info</h2>
                     <div className='mx-5'>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                        <label class="label">
+                            <input
+                                type="text"
+                                value={user.displayName}
+                                readOnly
+                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                            />
+                            <input
+                                type="text"
+                                value={user.email}
+                                readOnly
+                                class="input input-sm input-bordered w-full focus:outline-0 py-5 mt-5"
+                            />
+                            <label class="label">
                                 <span class="label-text">What is your Profession?</span>
                             </label>
                             <input
@@ -71,7 +89,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                             <label class="label">
                                 {errors.profession?.type === 'required' && <span className="label-text-alt text-red-500">{errors.profession.message}</span>}
                             </label>
-                        <label class="label">
+                            <label class="label">
                                 <span class="label-text">What is your City?</span>
                             </label>
                             <input
@@ -88,7 +106,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                             <label class="label">
                                 {errors.city?.type === 'required' && <span className="label-text-alt text-red-500">{errors.city.message}</span>}
                             </label>
-                        <label class="label">
+                            <label class="label">
                                 <span class="label-text">What is your State?</span>
                             </label>
                             <input
@@ -105,7 +123,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                             <label class="label">
                                 {errors.state?.type === 'required' && <span className="label-text-alt text-red-500">{errors.state.message}</span>}
                             </label>
-                        <label class="label">
+                            <label class="label">
                                 <span class="label-text">What is your Country?</span>
                             </label>
                             <input
@@ -122,7 +140,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                             <label class="label">
                                 {errors.country?.type === 'required' && <span className="label-text-alt text-red-500">{errors.country.message}</span>}
                             </label>
-                        <label class="label">
+                            <label class="label">
                                 <span class="label-text">What is your contact?</span>
                             </label>
                             <input
@@ -139,7 +157,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                             <label class="label">
                                 {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                             </label>
-                        <label class="label">
+                            <label class="label">
                                 <span class="label-text">What is your Photo url?</span>
                             </label>
                             <input

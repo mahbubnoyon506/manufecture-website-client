@@ -5,7 +5,7 @@ import OrderTable from './OrderTable';
 
 const ManageOrders = () => {
     const { data: orders, isLoading, refetch } = useQuery('Orders', () =>
-        fetch('https://shielded-refuge-26741.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
