@@ -7,6 +7,7 @@ AOS.init();
 
 const Service = ({ service }) => {
     const { _id, name, img, price, available, minimum, description } = service;
+    
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
             <figure className="p-5">

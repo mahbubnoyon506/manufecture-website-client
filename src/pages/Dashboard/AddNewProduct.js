@@ -32,7 +32,7 @@ const AddNewProduct = () => {
            description: data.description,
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://nameless-falls-03567.herokuapp.com/services', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',

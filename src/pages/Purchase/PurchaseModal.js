@@ -18,7 +18,7 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
             address: data.address,
             amount: amount,
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://nameless-falls-03567.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',
@@ -35,7 +35,7 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
          const current = {
              available:updated,
             };
-        fetch(`http://localhost:5000/service/${_id}`, {
+        fetch(`https://nameless-falls-03567.herokuapp.com/service/${_id}`, {
           method: 'PUT',
           headers: {
               'content-type' : 'application/json',

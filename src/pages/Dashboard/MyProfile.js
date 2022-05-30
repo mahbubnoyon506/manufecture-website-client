@@ -13,8 +13,9 @@ import ProfileUpdate from './ProfileUpdate';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [updateProfile, setUpdateProfile] = useState(null)
-    const url = `http://localhost:5000/profiles?email=${user.email}`
-    const { data: profUser, isLoading, refetch } = useQuery('users', () => fetch(url, {
+    const url = `http://localhost:5000/profiles?email=${user?.email}`
+
+    const { data: profUser, isLoading, refetch } = useQuery('profiles', () => fetch(url, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,8 +26,7 @@ const MyProfile = () => {
     if (isLoading) {
         return <Loader></Loader>
     }
-  
-
+  console.log(profUser)
     return (
         <div class="hero min-h-screen bg-base-200">
 
@@ -39,10 +39,10 @@ const MyProfile = () => {
                             {/* <img src={image} alt="" /> */}
                         </div>
                     </div>
-                    <h1 class="text-2xl font-bold">{user?.displayName}</h1>
+                    <h1 class="text-2xl font-bold">{user.displayName}</h1>
                     <p class="py-2">Profession: {profUser?.profession}</p>
                     <p class="py-2">State: {profUser?.address?.state} City: {profUser?.address?.city} Country: {profUser?.address?.country} </p>
-                    <p class="py-2">Email: {profUser?.email} </p>
+                    <p class="py-2">Email: {user.email} </p>
                     <p class="py-2">Phone: {profUser?.phone}</p>
                     <div>
                         <div class="tooltip" data-tip="Facebook">

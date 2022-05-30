@@ -4,7 +4,7 @@ const DeleteMyOrder = ({deleteOrder, setDeleteOrder, refetch}) => {
     const {_id} = deleteOrder;
     console.log(_id)
     const handleDeleteOrder = () => {
-        const url = `http://localhost:5000/orders/${_id}`;
+        const url = `https://nameless-falls-03567.herokuapp.com/orders/${_id}`;
        fetch(url, {
            method: 'DELETE',
            headers: {

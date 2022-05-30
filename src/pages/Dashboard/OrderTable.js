@@ -8,7 +8,7 @@ const OrderTable = ({ order, index, refetch }) => {
         const status = {
             shipped: true,
         }
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://nameless-falls-03567.herokuapp.com/orders/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

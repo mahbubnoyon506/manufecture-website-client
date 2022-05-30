@@ -4,7 +4,7 @@ import Loader from '../../components/Loader';
 
 const CustomerReview = () => {
     const { data: reviews, isLoading } = useQuery('review', () =>
-        fetch('http://localhost:5000/reviews')
+        fetch('https://nameless-falls-03567.herokuapp.com/reviews')
             .then(res => res.json())
     )
     if (isLoading) {
