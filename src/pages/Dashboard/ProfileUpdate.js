@@ -37,7 +37,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                         country: data.country
                     },
                     phone: data.phone,
-                    image: imageUrl,
+                    image: imageUrl
                 }
                 console.log(profile)
 

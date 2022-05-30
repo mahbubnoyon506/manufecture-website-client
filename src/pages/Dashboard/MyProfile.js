@@ -13,7 +13,7 @@ import ProfileUpdate from './ProfileUpdate';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [updateProfile, setUpdateProfile] = useState(null)
-    const url = `http://localhost:5000/profiles?email=${user?.email}`
+    const url = `https://nameless-falls-03567.herokuapp.com/profiles?email=${user?.email}`
 
     const { data: profUser, isLoading, refetch } = useQuery('profiles', () => fetch(url, {
         method: 'GET',
@@ -26,7 +26,7 @@ const MyProfile = () => {
     if (isLoading) {
         return <Loader></Loader>
     }
-  console.log(profUser)
+
     return (
         <div class="hero min-h-screen bg-base-200">
 
