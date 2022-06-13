@@ -1,9 +1,13 @@
 
 import useServices from '../../hooks/UseServices';
 import Service from './Service';
+import Loader from '../Loader'
 
 const Services = () => {
-    const [services] = useServices();
+    const [services, isloading] = useServices();
+    if(isloading){
+        return <Loader></Loader>
+    }
     return (
         <div className='mt-[-180px]'>
             <h2 className='text-4xl text-primary text-center font-semibold py-5'>Our Featured Products</h2>
