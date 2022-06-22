@@ -5,7 +5,7 @@ const MiddleSec = () => {
 
     return (
         <section>
-            <div className='mx-10 pt-10'>
+            <div className='mx-10 pt-10 mt-[-180px]' >
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-10 '>
                     <div class="hero min-h-screen flex justify-starts sm:mb-[-200px]" style={{ background: `url(https://i.ibb.co/vXtvYYV/ultimate.webp)`, backgroundRepeat: 'no-repeat' }}>
                         <div class=" w-3/4 ml-8">

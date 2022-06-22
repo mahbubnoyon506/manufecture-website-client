@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                 <div data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000">
-                    <img src={img} alt="Shoes" className="rounded-xl w-96 h-80" />
+                    <img src={img} alt="" className="rounded-xl w-96 h-80" />
                 </div>
 
             </figure>
