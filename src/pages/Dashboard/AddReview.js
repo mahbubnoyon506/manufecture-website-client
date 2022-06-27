@@ -38,28 +38,28 @@ const AddReview = () => {
         showErrorMessage = <small className='text-red-500'>{errors.message}</small>
     }
     return (
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content flex-col lg:flex-row">
-                <div class="card  w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+        <div className="hero min-h-screen bg-base-200">
+            <div className="hero-content flex-col lg:flex-row">
+                <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <h2 className='text-2xl text-primary text-center'>Add your review here.</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input
                                 type="text"
                                 value={user.displayName}
                                 readOnly
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0 py-5"
                             />
                             <input
                                 type="email"
                                 value={user.email}
                                 readOnly
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0 py-5 my-5"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0 py-5 my-5"
                             />
                             <input
                                 type="number"
                                 placeholder="What is your review out of five?"
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0 py-5"
                                 {...register('point', {
                                     required: {
                                         value: true,
@@ -71,14 +71,14 @@ const AddReview = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.point?.type === 'required' && <span className="label-text-alt text-red-500">{errors.point.message}</span>}
                                 {errors.point?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.point.message}</span>}
                             </label>
                             <textarea
                                 type="text"
                                 placeholder="Type your review here"
-                                class="textarea textarea-bordered w-full max-w-xs focus:outline-0"
+                                className="textarea textarea-bordered w-full max-w-xs focus:outline-0"
                                 {...register('review', {
                                     required: {
                                         value: true,
@@ -86,7 +86,7 @@ const AddReview = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.review?.type === 'required' && <span className="label-text-alt text-red-500">{errors.review.message}</span>}
                             </label>
                             {showErrorMessage}

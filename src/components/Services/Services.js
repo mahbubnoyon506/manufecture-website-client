@@ -1,8 +1,8 @@
-
-import useServices from '../../hooks/UseServices';
 import Service from './Service';
 import Loader from '../Loader'
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+const axios = require('axios');
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -10,15 +10,16 @@ const Services = () => {
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0)
     const [isloading, setIsloading] = useState(true)
-    useEffect(() => {
-        fetch(`https://nameless-falls-03567.herokuapp.com/services?limit=${limit}&pageNumber=${page}`)
-            .then(res => res.json())
-            .then(data => {
-                setServices(data.data);
-                setPageCount(Math.ceil(data.count/limit))
-                setIsloading(false)
-            })
-    }, [limit, page])
+
+    useEffect( () => {
+        (async () => {
+           const {data} = await axios.get(`https://nameless-falls-03567.herokuapp.com/services?limit=${limit}&pageNumber=${page}`)
+           if(!data?.success) return toast.error("Products didn't found.")
+           setServices(data.data)
+           setPageCount(Math.ceil(data.count/limit))
+           setIsloading(false)
+        })()
+    } , [page, limit])
     if(isloading){
         return <Loader></Loader>
     }

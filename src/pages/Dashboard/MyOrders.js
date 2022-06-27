@@ -45,6 +45,7 @@ const MyOrders = () => {
             {
                 deleteOrder && <DeleteMyOrder deleteOrder={deleteOrder} setDeleteOrder={setDeleteOrder} refetch={refetch}></DeleteMyOrder>
             }
+            
         </div>
     );
 };
