@@ -55,34 +55,34 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
 
     return (
         <div>
-            <input type="checkbox" id="purchase-confirm" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box ">
+            <input type="checkbox" id="purchase-confirm" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box ">
                     <h2 className='text-xl text-center text-primary mb-5 font-semibold'>Fill the form and confirm purchase.</h2>
-                    <label for="purchase-confirm" class="btn btn-sm btn-circle absolute right-2 top-2 bg-primary text-base-100">✕</label>
+                    <label for="purchase-confirm" className="btn btn-sm btn-circle absolute right-2 top-2 bg-primary text-base-100">✕</label>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             type="text"
                             value={displayName}
                             readOnly
-                            class="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5"
+                            className="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5"
                         />
                         <input
                             type="email"
                             value={email}
                             readOnly
-                            class="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5 my-5"
+                            className="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5 my-5"
                         />
                         <input
                             type="text"
                             value={purchase}
                             readOnly
-                            class="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5 "
+                            className="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5 "
                         />
                         <input
                             type="number"
                             placeholder="Type phone number?"
-                            class="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5 mt-5"
+                            className="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5 mt-5"
                             {...register('phone', {
                                 required: {
                                     value: true,
@@ -90,13 +90,13 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                         </label>
                         <input
                             type="text"
                             placeholder="Type your address here"
-                            class="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5"
+                            className="input input-sm input-bordered w-full purchase-confirm focus:outline-0 py-5"
                             {...register('address', {
                                 required: {
                                     value: true,
@@ -104,11 +104,11 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
                                 }
                             })}
                         />
-                        <label class="label">
+                        <label className="label">
                             {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address.message}</span>}
                         </label>
                         {showErrorMessage}
-                        <input type="submit" value="Confirm Purchase" class="btn btn-primary w-full text-base-100" />
+                        <input type="submit" value="Confirm Purchase" className="btn btn-primary w-full text-base-100" />
                     </form>
 
                 </div>

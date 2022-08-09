@@ -56,15 +56,15 @@ const AddNewProduct = () => {
         showErrorMessage = <small className='text-red-500'>{errors.message}</small>
     }
     return (
-        <div class="flex justify-center items-center min-h-screen bg-base-200">
-                <div class="card w-1/2 shadow-2xl bg-base-100">
-                    <div class="card-body">
+        <div className="flex justify-center items-center min-h-screen bg-base-200">
+                <div className="card w-1/2 shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <h2 className='text-2xl text-primary text-center'>Add product details here</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input
                                 type="text"
                                 placeholder='Photo URL'
-                                class="input input-sm input-bordered w-full py-5 focus:outline-0"
+                                className="input input-sm input-bordered w-full py-5 focus:outline-0"
                                 {...register('img', {
                                     required: {
                                         value: true,
@@ -72,13 +72,13 @@ const AddNewProduct = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.img?.type === 'required' && <span className="label-text-alt text-red-500">{errors.img.message}</span>}
                             </label>
                             <input
                                 type="text"
                                 placeholder="Type product name here"
-                                class="input input-sm input-bordered w-full py-5 focus:outline-0"
+                                className="input input-sm input-bordered w-full py-5 focus:outline-0"
                                 {...register('name', {
                                     required: {
                                         value: true,
@@ -86,13 +86,13 @@ const AddNewProduct = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                             </label>
                             <input
                                 type="number"
                                 placeholder="Give product price here"
-                                class="input input-sm input-bordered w-full py-5 focus:outline-0"
+                                className="input input-sm input-bordered w-full py-5 focus:outline-0"
                                 {...register('price', {
                                     required: {
                                         value: true,
@@ -100,13 +100,13 @@ const AddNewProduct = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price.message}</span>}
                             </label>
                             <input
                                 type="number"
                                 placeholder="Type available quantity here"
-                                class="input input-sm input-bordered w-full py-5 focus:outline-0"
+                                className="input input-sm input-bordered w-full py-5 focus:outline-0"
                                 {...register('available', {
                                     required: {
                                         value: true,
@@ -114,13 +114,13 @@ const AddNewProduct = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.available?.type === 'required' && <span className="label-text-alt text-red-500">{errors.available.message}</span>}
                             </label>
                             <input
                                 type="number"
                                 placeholder="Type minimum order quantuty here"
-                                class="input input-sm input-bordered w-full py-5 focus:outline-0"
+                                className="input input-sm input-bordered w-full py-5 focus:outline-0"
                                 {...register('minimum', {
                                     required: {
                                         value: true,
@@ -128,13 +128,13 @@ const AddNewProduct = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.minimum?.type === 'required' && <span className="label-text-alt text-red-500">{errors.minimum.message}</span>}
                             </label>
                             <textarea
                                 type="text"
                                 placeholder="Type Short Description here"
-                                class="textarea textarea-bordered w-full focus:outline-0"
+                                className="textarea textarea-bordered w-full focus:outline-0"
                                 {...register('description', {
                                     required: {
                                         value: true,
@@ -142,7 +142,7 @@ const AddNewProduct = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
                             </label>
                             {showErrorMessage}

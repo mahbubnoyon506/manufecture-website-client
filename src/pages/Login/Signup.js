@@ -44,19 +44,19 @@ const Signup = () => {
 
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
                     <h2 className="text-4xl text-seconday text-center">Sign Up</h2>
-                    <div class="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs">
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <label class="label">
-                                <span class="label-text">What is your name?</span>
+                            <label className="label">
+                                <span className="label-text">What is your name?</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Type here"
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0"
                                 {...register('name', {
                                     required: {
                                         value: true,
@@ -64,17 +64,17 @@ const Signup = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                             </label>
                             {/* name field end and email field start */}
-                            <label class="label">
-                                <span class="label-text">What is your Email?</span>
+                            <label className="label">
+                                <span className="label-text">What is your Email?</span>
                             </label>
                             <input
                                 type="email"
                                 placeholder="Type here"
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0"
                                 {...register('email', {
                                     required: {
                                         value: true,
@@ -86,18 +86,18 @@ const Signup = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                             {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span> }
                             {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span> }
                             </label>
                             {/* email field end and password field start */}
-                            <label class="label">
-                                <span class="label-text">What is your password?</span>
+                            <label className="label">
+                                <span className="label-text">What is your password?</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Type here"
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0"
                                 {...register('password', {
                                     required: {
                                         value: true,
@@ -109,7 +109,7 @@ const Signup = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                             {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span> }
                             {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span> }
                             </label>
@@ -118,7 +118,7 @@ const Signup = () => {
                         </form>
                     </div>
                     <p>Already have account? <Link to='/login'><span className='text-primary'>Login</span></Link></p>
-                    <div class="divider">OR</div>
+                    <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className='btn btn-sm btn-outline hover:bg-primary'> <img className='w-4 mr-2' src="https://i.ibb.co/9tw7sWw/google.png" alt="" /> Continue With Google</button>
                 </div>
             </div>

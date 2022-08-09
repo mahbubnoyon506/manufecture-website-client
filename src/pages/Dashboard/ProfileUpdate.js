@@ -74,10 +74,10 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
 
     return (
         <div>
-            <input type="checkbox" id="profModal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box relative">
-                    <label for="profModal" class="btn btn-sm btn-circle bg-primary text-base-100 absolute right-2 top-2">✕</label>
+            <input type="checkbox" id="profModal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box relative">
+                    <label for="profModal" className="btn btn-sm btn-circle bg-primary text-base-100 absolute right-2 top-2">✕</label>
                     <h2 className='text-xl text-primary text-center py-3'>Update your profile info</h2>
                     <div className='mx-5'>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -85,21 +85,21 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                 type="text"
                                 value={user.displayName}
                                 readOnly
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5"
                             />
                             <input
                                 type="text"
                                 value={user.email}
                                 readOnly
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5 mt-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5 mt-5"
                             />
-                            <label class="label">
-                                <span class="label-text">What is your Profession?</span>
+                            <label className="label">
+                                <span className="label-text">What is your Profession?</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder='Type tour profession'
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5"
                                 {...register('profession', {
                                     required: {
                                         value: true,
@@ -107,16 +107,16 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.profession?.type === 'required' && <span className="label-text-alt text-red-500">{errors.profession.message}</span>}
                             </label>
-                            <label class="label">
-                                <span class="label-text">What is your City?</span>
+                            <label className="label">
+                                <span className="label-text">What is your City?</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder='Type Your City'
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5"
                                 {...register('city', {
                                     required: {
                                         value: true,
@@ -124,16 +124,16 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.city?.type === 'required' && <span className="label-text-alt text-red-500">{errors.city.message}</span>}
                             </label>
-                            <label class="label">
-                                <span class="label-text">What is your State?</span>
+                            <label className="label">
+                                <span className="label-text">What is your State?</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder='Type Your state'
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5"
                                 {...register('state', {
                                     required: {
                                         value: true,
@@ -141,16 +141,16 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.state?.type === 'required' && <span className="label-text-alt text-red-500">{errors.state.message}</span>}
                             </label>
-                            <label class="label">
-                                <span class="label-text">What is your Country?</span>
+                            <label className="label">
+                                <span className="label-text">What is your Country?</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder='Type Your country'
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5"
                                 {...register('country', {
                                     required: {
                                         value: true,
@@ -158,16 +158,16 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.country?.type === 'required' && <span className="label-text-alt text-red-500">{errors.country.message}</span>}
                             </label>
-                            <label class="label">
-                                <span class="label-text">What is your contact?</span>
+                            <label className="label">
+                                <span className="label-text">What is your contact?</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder='Type Your phone number'
-                                class="input input-sm input-bordered w-full focus:outline-0 py-5"
+                                className="input input-sm input-bordered w-full focus:outline-0 py-5"
                                 {...register('phone', {
                                     required: {
                                         value: true,
@@ -175,16 +175,16 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                             </label>
-                            <label class="label">
-                                <span class="label-text">What is your Photo url?</span>
+                            <label className="label">
+                                <span className="label-text">What is your Photo url?</span>
                             </label>
                             <input
                                 type="file"
                                 placeholder='Type Your photo url'
-                                class="input input-sm cursor-pointer focus:outline-0 mb-3 pb-2"
+                                className="input input-sm cursor-pointer focus:outline-0 mb-3 pb-2"
                                 {...register('image', {
                                     required: {
                                         value: true,
@@ -192,7 +192,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.photo?.type === 'required' && <span className="label-text-alt text-red-500">{errors.photo.message}</span>}
                             </label>
 

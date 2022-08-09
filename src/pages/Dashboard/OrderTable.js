@@ -27,7 +27,7 @@ const OrderTable = ({ order, index, refetch }) => {
             })
     }
     return (
-        <tr class="hover">
+        <tr className="hover">
             <th>{index + 1}</th>
             <td>{email}</td>
             <td>{product}</td>
@@ -35,17 +35,17 @@ const OrderTable = ({ order, index, refetch }) => {
             <td>
                 {
                     paid ?
-                        <p class="text-md text-primary">Paid</p>
+                        <p className="text-md text-primary">Paid</p>
                         :
-                        <p class="text-red-500 text-md">Un Paid</p>
+                        <p className="text-red-500 text-md">Un Paid</p>
                 }
             </td>
             <td>
                 {
                     paid && shipped ?
-                        <p class="text-md text-primary">Shipped</p>
+                        <p className="text-md text-primary">Shipped</p>
                         :
-                        <button onClick={handleShipping} class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-0">Pending</button>
+                        <button onClick={handleShipping} className="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-0">Pending</button>
                 }
 
             </td>

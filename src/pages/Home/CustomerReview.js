@@ -17,22 +17,22 @@ const CustomerReview = () => {
 
                 {
                     reviews.map(review =>
-                        <div class="stats shadow" key={review._id}>
-                            <div class="stat">
+                        <div className="stats shadow" key={review._id}>
+                            <div className="stat">
                                 <div className='flex justify-between'>
-                                    <div class="avatar mb-2">
-                                        <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <div className="avatar mb-2">
+                                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                             <img src="https://api.lorem.space/image/face?hash=3174" alt='' />
                                         </div>
                                     </div>
                                     <div>
                                         <div className='block text-primary text-xl'>{review.point} Of</div>
-                                        <div class="rating">
-                                            <input type="radio" name="rating-4" class="mask mask-star-2 bg-secondary" />
-                                            <input type="radio" name="rating-4" class="mask mask-star-2 bg-secondary" />
-                                            <input type="radio" name="rating-4" class="mask mask-star-2 bg-secondary" />
-                                            <input type="radio" name="rating-4" class="mask mask-star-2 bg-secondary" />
-                                            <input type="radio" name="rating-4" class="mask mask-star-2 bg-secondary" checked />
+                                        <div className="rating">
+                                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-secondary" />
+                                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-secondary" />
+                                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-secondary" />
+                                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-secondary" />
+                                            <input type="radio" name="rating-4" className="mask mask-star-2 bg-secondary" checked />
                                         </div>
                                     </div>
                                 </div>

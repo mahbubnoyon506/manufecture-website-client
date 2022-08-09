@@ -26,19 +26,19 @@ const ResetPass = () => {
     return (
 
         <div className='flex justify-center items-center h-screen'>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
                     <h2 className="text-4xl text-seconday text-center">Reset Password</h2>
-                    <div class="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs">
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <label class="label">
-                                <span class="label-text">What is your Email?</span>
+                            <label className="label">
+                                <span className="label-text">What is your Email?</span>
                             </label>
                             <input
                                 type="email"
                                 placeholder="Type here"
-                                class="input input-sm input-bordered w-full max-w-xs focus:outline-0"
+                                className="input input-sm input-bordered w-full max-w-xs focus:outline-0"
                                 {...register('email', {
                                     required: {
                                         value: true,
@@ -50,7 +50,7 @@ const ResetPass = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
+                            <label className="label">
                                 {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                                 {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                             </label>

@@ -5,7 +5,7 @@ const MyOrderTable = ({ order, index, setDeleteOrder }) => {
     const { _id, trasectionId, shipped, paid, product, amount, quantity } = order;
 
     return (
-        <tr class="hover">
+        <tr className="hover">
             <th>{index + 1}</th>
             <td>{product}</td>
             <td>{quantity} Pieces</td>
@@ -14,15 +14,15 @@ const MyOrderTable = ({ order, index, setDeleteOrder }) => {
                 {
                     paid ?
                         <>
-                            <p class="text-xl text-primary">Paid</p>
-                            <p class="text-md text-primary">Transection ID. <span className="text-accent">{trasectionId}</span></p></>
+                            <p className="text-xl text-primary">Paid</p>
+                            <p className="text-md text-primary">Transection ID. <span className="text-accent">{trasectionId}</span></p></>
                         :
                         <Link className='btn btn-xs btn-outline text-primary hover:bg-primary hover:text-base-100 hover:border-primary' to={`/dashboard/payment/${_id}`}>Pay Amount</Link>
                 }
             </td>
             <td>
                 {
-                    ((paid && shipped) && <p class="text-md text-primary">Shipped</p>) || ((paid && !shipped) && <p class="text-md text-red-500">Pending</p>)
+                    ((paid && shipped) && <p className="text-md text-primary">Shipped</p>) || ((paid && !shipped) && <p className="text-md text-red-500">Pending</p>)
                 }
             </td>
             <td>

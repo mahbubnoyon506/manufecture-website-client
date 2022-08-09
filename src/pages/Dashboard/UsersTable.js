@@ -30,11 +30,11 @@ const makeAdmin = () =>{
             <td>{email}</td>
             <td>
                 {
-                   user.role ? <button class="text-primary">Admin</button> :
-                   <button onClick={makeAdmin} class="btn btn-xs btn-outline text-primary hover:bg-primary hover:text-base-100 hover:border-primary">Make Admin</button>
+                   user.role ? <button className="text-primary">Admin</button> :
+                   <button onClick={makeAdmin} className="btn btn-xs btn-outline text-primary hover:bg-primary hover:text-base-100 hover:border-primary">Make Admin</button>
                 }
             </td>
-            {/* <td><button class="btn btn-outline btn-xs hover:bg-primary">Remove User</button></td> */}
+            {/* <td><button className="btn btn-outline btn-xs hover:bg-primary">Remove User</button></td> */}
         </tr>
     );
 };

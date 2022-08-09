@@ -29,31 +29,31 @@ const Purchase = () => {
     }
     return (
         <div>
-            <div class="hero min-h-screen bg-base-200 px-10">
-                <div class="">
-                    <h2 class="py-1 text-2xl font-bold">{user.displayName}</h2>
-                    <h2 class="py-1 text-2xl font-bold">Email Account: {user.email}</h2>
-                    <h4 class="pb-4 text-xl ">You have selected the product <span className='text-primary font-bold'>{service.name}</span>. Type your expected quantity and confirm puchase process.</h4>
-                    <div class="text-center grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <div class="card w-full shadow-2xl bg-base-100">
-                            <div class="card-body">
+            <div className="hero min-h-screen bg-base-200 px-10">
+                <div className="">
+                    <h2 className="py-1 text-2xl font-bold">{user.displayName}</h2>
+                    <h2 className="py-1 text-2xl font-bold">Email Account: {user.email}</h2>
+                    <h4 className="pb-4 text-xl ">You have selected the product <span className='text-primary font-bold'>{service.name}</span>. Type your expected quantity and confirm puchase process.</h4>
+                    <div className="text-center grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div className="card w-full shadow-2xl bg-base-100">
+                            <div className="card-body">
                                 <img className='w-full' src={service.img} alt="" />
                             </div>
                         </div>
                         <div className='lg:text-left my-auto'>
-                            <h1 class="text-4xl font-bold">{service.name}</h1>
-                            <p class=" text-accent text-xl">Product price per unit <span className='text-primary'>${service.price}</span></p>
-                            <p class=" text-accent text-xl">Available products in stock <span className='text-primary'>{service.available} pieces.</span></p>
-                            <p class=" text-accent text-xl">Minimum order quantity <span className='text-primary'>{service.minimum} pieces.</span></p>
+                            <h1 className="text-4xl font-bold">{service.name}</h1>
+                            <p className=" text-accent text-xl">Product price per unit <span className='text-primary'>${service.price}</span></p>
+                            <p className=" text-accent text-xl">Available products in stock <span className='text-primary'>{service.available} pieces.</span></p>
+                            <p className=" text-accent text-xl">Minimum order quantity <span className='text-primary'>{service.minimum} pieces.</span></p>
                             <div className='my-3'>
                                 {(purchase && !admin) && <PurchaseModal purchase={purchase} user={user} service={service} setPurchase={setPurchase}></PurchaseModal>}
-                                <label disabled={(purchase < service.minimum || purchase > service.available) && !purchase} onClick={() => setPurchase(purchase)} for="purchase-confirm" class="btn btn-sm bg-primary text-white border-0 h-12">Pick Quantity</label>
-                                <input required onChange={handleOnBlour} class="input input-bordered focus:outline-0 py-5 ml-2" type="number" />
+                                <label disabled={(purchase < service.minimum || purchase > service.available) && !purchase} onClick={() => setPurchase(purchase)} for="purchase-confirm" className="btn btn-sm bg-primary text-white border-0 h-12">Pick Quantity</label>
+                                <input required onChange={handleOnBlour} className="input input-bordered focus:outline-0 py-5 ml-2" type="number" />
                             </div>
                             {showError}
                         </div>
                     </div>
-                    <div className='py-5'> <p ><span class="font-semibold">Products Description:</span> {service.description}</p></div>
+                    <div className='py-5'> <p ><span className="font-semibold">Products Description:</span> {service.description}</p></div>
                 </div>
             </div>
         </div>

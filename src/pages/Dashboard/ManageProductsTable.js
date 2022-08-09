@@ -9,8 +9,8 @@ const ManageProductsTable = ({ service, index, setDeleteProduct }) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="avatar">
-                    <div class="w-24 rounded">
+                <div className="avatar">
+                    <div className="w-24 rounded">
                         <img src={img} alt='' />
                     </div>
                 </div>
@@ -18,7 +18,7 @@ const ManageProductsTable = ({ service, index, setDeleteProduct }) => {
             <td>{name}</td>
             <td>{available}</td>
             <td>
-                <label onClick={() => setDeleteProduct(service)} for="manageProducts" class="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary">Remove</label>
+                <label onClick={() => setDeleteProduct(service)} for="manageProducts" className="btn btn-xs btn-outline text-red-500 hover:bg-primary hover:text-base-100 hover:border-primary">Remove</label>
             </td>
         </tr>
     );

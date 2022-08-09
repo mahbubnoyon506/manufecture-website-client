@@ -28,38 +28,38 @@ const MyProfile = () => {
     }
 
     return (
-        <div class="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200">
 
-            <div class="hero-content">
+            <div className="hero-content">
 
-                <div class="max-w-md">
-                    <div class="avatar">
-                        <div class="w-24 rounded-full">
+                <div className="max-w-md">
+                    <div className="avatar">
+                        <div className="w-24 rounded-full">
                             <img src={profUser?.image} alt='' />
                             {/* <img src={image} alt="" /> */}
                         </div>
                     </div>
-                    <h1 class="text-2xl font-bold">{user.displayName}</h1>
-                    <p class="py-2">Profession: {profUser?.profession}</p>
-                    <p class="py-2">State: {profUser?.address?.state} City: {profUser?.address?.city} Country: {profUser?.address?.country} </p>
-                    <p class="py-2">Email: {user.email} </p>
-                    <p class="py-2">Phone: {profUser?.phone}</p>
+                    <h1 className="text-2xl font-bold">{user.displayName}</h1>
+                    <p className="py-2">Profession: {profUser?.profession}</p>
+                    <p className="py-2">State: {profUser?.address?.state} City: {profUser?.address?.city} Country: {profUser?.address?.country} </p>
+                    <p className="py-2">Email: {user.email} </p>
+                    <p className="py-2">Phone: {profUser?.phone}</p>
                     <div>
-                        <div class="tooltip" data-tip="Facebook">
-                            <button class="btn btn-sm mx-2"><FaFacebook></FaFacebook></button>
+                        <div className="tooltip" data-tip="Facebook">
+                            <button className="btn btn-sm mx-2"><FaFacebook></FaFacebook></button>
                         </div>
-                        <div class="tooltip" data-tip="Twitter">
-                            <button class="btn btn-sm mx-2"><FaTwitter></FaTwitter></button>
+                        <div className="tooltip" data-tip="Twitter">
+                            <button className="btn btn-sm mx-2"><FaTwitter></FaTwitter></button>
                         </div>
-                        <div class="tooltip" data-tip="Thumbler">
-                            <button class="btn btn-sm mx-2"><FaTumblr></FaTumblr></button>
+                        <div className="tooltip" data-tip="Thumbler">
+                            <button className="btn btn-sm mx-2"><FaTumblr></FaTumblr></button>
                         </div>
-                        <div class="tooltip" data-tip="Linkedin">
-                            <button class="btn btn-sm mx-2"><FaLinkedinIn></FaLinkedinIn></button>
+                        <div className="tooltip" data-tip="Linkedin">
+                            <button className="btn btn-sm mx-2"><FaLinkedinIn></FaLinkedinIn></button>
                         </div>
                     </div>
                     <div className='my-5'>
-                    <label onClick={() => setUpdateProfile(profUser)} for="profModal" class="btn modal-button">Update Profile</label>
+                    <label onClick={() => setUpdateProfile(profUser)} for="profModal" className="btn modal-button">Update Profile</label>
                     </div>
 
                 </div>
