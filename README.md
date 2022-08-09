@@ -2,16 +2,15 @@
 
 This project is about a Manufacture based website name  [John Deere ]().
 
-## Available Products
+## Project Overview and featured
 
-All kinds of agriculture related instruments manufact here.
+* Overview: This site is manufacturer-based. On this site, users can create an account, order
+products, and pay online. They can check the shipping status and modify orders. Sellers can add,
+update or remove products. They can manage orders. None can order without having an account.
 
-They provide both online and offline product instalment service.
+* Features: Firebase authentication, Dashboard for user and admin, Stripe payment system, User
+verification with JWT, Private route.
+* Technology Used: React, Stripe, Firebase, React-router-dom, Axios, React-hook-form, React-query,
+Cors, Dotenv, Express, MongoDB, Tailwind, JWT
 
-## Featured added in this site are
-
-* Every can visit this site and they can create account here.
-* After creating account visitir unlock some feature which are only available for registered user.
-* There have admin panel to control the full site.
-* Admin can manage product, orders and users also
 
