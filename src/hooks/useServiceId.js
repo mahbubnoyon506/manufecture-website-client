@@ -5,7 +5,7 @@ const useServiceId = () => {
     const {id} = useParams();
     const [service, setService]= useState(id);
     useEffect(() => {
-        const url = `https://nameless-falls-03567.herokuapp.com/services/${id}`;
+        const url = `https://manufecture-website-server.onrender.com/services/${id}`;
         fetch(url, {
             method: 'GET',
             headers: {

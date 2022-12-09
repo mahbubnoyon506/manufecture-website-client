@@ -13,7 +13,7 @@ const Services = () => {
 
     useEffect( () => {
         (async () => {
-           const {data} = await axios.get(`https://nameless-falls-03567.herokuapp.com/services?limit=${limit}&pageNumber=${page}`)
+           const {data} = await axios.get(`https://manufecture-website-server.onrender.com/services?limit=${limit}&pageNumber=${page}`)
            if(!data?.success) return toast.error("Products didn't found.")
            setServices(data.data)
            setPageCount(Math.ceil(data.count/limit))

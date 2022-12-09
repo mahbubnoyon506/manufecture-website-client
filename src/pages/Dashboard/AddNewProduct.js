@@ -32,7 +32,7 @@ const AddNewProduct = () => {
            description: data.description,
         }
 
-        fetch('https://nameless-falls-03567.herokuapp.com/services', {
+        fetch('https://manufecture-website-server.onrender.com/services', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',

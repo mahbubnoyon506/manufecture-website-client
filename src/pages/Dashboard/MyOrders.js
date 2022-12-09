@@ -10,7 +10,7 @@ import MyOrderTable from './MyOrderTable';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [deleteOrder, setDeleteOrder] = useState(null)
-    const url = `https://nameless-falls-03567.herokuapp.com/order?email=${user.email}`
+    const url = `https://manufecture-website-server.onrender.com/order?email=${user.email}`
     const { data: orders, isLoading, refetch } = useQuery('single-order', () => fetch(url, {
         method: 'GET',
         headers: {

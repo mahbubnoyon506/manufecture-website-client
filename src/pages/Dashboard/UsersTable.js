@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UsersTable = ({user, refetch, index}) => {
     const {email} = user;
 const makeAdmin = () =>{
-    const url = `https://nameless-falls-03567.herokuapp.com/users/admin/${email}`;
+    const url = `https://manufecture-website-server.onrender.com/users/admin/${email}`;
     fetch(url, {
         method: 'PUT',
         headers: {

@@ -41,7 +41,7 @@ const ProfileUpdate = ({ profUser, refetch, setUpdateProfile }) => {
                 }
                 console.log(profile)
 
-                fetch(`https://nameless-falls-03567.herokuapp.com/profiles/${email}`, {
+                fetch(`https://manufecture-website-server.onrender.com/profiles/${email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json',

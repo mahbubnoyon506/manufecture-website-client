@@ -4,7 +4,7 @@ const useServices = () =>{
     const [services, setServices] = useState([]);
     const [isloading, setIsloading] = useState(true)
     useEffect(() => {
-        fetch('https://nameless-falls-03567.herokuapp.com/services')
+        fetch('https://manufecture-website-server.onrender.com/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data)

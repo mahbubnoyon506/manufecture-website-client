@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L0m3ZDl4aqKhSry404LiN0wWgPfpHi09C4GA
 const Payment = () => {
     const { id } = useParams();
     const { data: order, isLoading } = useQuery('orderid', () =>
-        fetch(`https://nameless-falls-03567.herokuapp.com/orders/${id}`, {
+        fetch(`https://manufecture-website-server.onrender.com/orders/${id}`, {
             method: 'GET',
             headers: {
                 'authorization' : `Bearer ${localStorage.getItem('accessToken')}`

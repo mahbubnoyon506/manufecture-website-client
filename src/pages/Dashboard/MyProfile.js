@@ -13,7 +13,7 @@ import ProfileUpdate from './ProfileUpdate';
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [updateProfile, setUpdateProfile] = useState(null)
-    const url = `https://nameless-falls-03567.herokuapp.com/profiles?email=${user?.email}`
+    const url = `https://manufecture-website-server.onrender.com/profiles?email=${user?.email}`
 
     const { data: profUser, isLoading, refetch } = useQuery('profiles', () => fetch(url, {
         method: 'GET',

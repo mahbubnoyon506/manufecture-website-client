@@ -6,7 +6,7 @@ import useService from '../../hooks/useServiceId'
 const ManageProductsModal = ({refetch, setDeleteProduct, deleteProduct}) => {
      const {_id} = deleteProduct;
     const handleremove = () =>{
-        const url = `https://nameless-falls-03567.herokuapp.com/services/${_id}`;
+        const url = `https://manufecture-website-server.onrender.com/services/${_id}`;
         fetch(url, {
             method: 'DELETE',
             headers: {

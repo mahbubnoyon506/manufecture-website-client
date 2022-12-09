@@ -7,7 +7,7 @@ import ManageProductsTable from './ManageProductsTable';
 const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
     const { data: services, isLoading, refetch } = useQuery('services', () =>
-        fetch('https://nameless-falls-03567.herokuapp.com/services', {
+        fetch('https://manufecture-website-server.onrender.com/services', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,7 +17,7 @@ const ManageProducts = () => {
     if (isLoading) {
         return <Loader></Loader>
     }
-    console.log(services)
+
     return (
         <div className="overflow-x-auto">
             <table className="table w-full">

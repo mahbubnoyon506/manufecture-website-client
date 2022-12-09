@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
     const [clientSecret, setClientSecret] = useState('');
     const {_id, amount, name, email } = order;
     useEffect(() => {
-        fetch('https://nameless-falls-03567.herokuapp.com/create-payment-intent', {
+        fetch('https://manufecture-website-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -74,7 +74,7 @@ const CheckoutForm = ({ order }) => {
                 orderedId : _id,
                 transectionId : paymentIntent.id
             }
-            fetch(`https://nameless-falls-03567.herokuapp.com/orders/${_id}`, {
+            fetch(`https://manufecture-website-server.onrender.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type' : 'application/json',

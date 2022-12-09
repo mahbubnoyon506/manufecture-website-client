@@ -14,7 +14,7 @@ const AddReview = () => {
             review: data.review,
             point: data.point
         }
-        fetch('https://nameless-falls-03567.herokuapp.com/reviews', {
+        fetch('https://manufecture-website-server.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

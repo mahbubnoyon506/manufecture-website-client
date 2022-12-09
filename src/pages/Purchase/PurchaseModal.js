@@ -18,7 +18,7 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
             address: data.address,
             amount: amount,
         }
-        fetch('https://nameless-falls-03567.herokuapp.com/orders', {
+        fetch('https://manufecture-website-server.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',
@@ -35,7 +35,7 @@ const PurchaseModal = ({purchase, user, service, setPurchase}) => {
          const current = {
              available:updated,
             };
-        fetch(`https://nameless-falls-03567.herokuapp.com/service/${_id}`, {
+        fetch(`https://manufecture-website-server.onrender.com/service/${_id}`, {
           method: 'PUT',
           headers: {
               'content-type' : 'application/json',
